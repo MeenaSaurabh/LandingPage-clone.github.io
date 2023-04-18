@@ -1,0 +1,431 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+.container{
+    width: 100%;
+    min-height: 100%;      /* new CONCEPT */
+    background-color: black;
+    padding: 2vmax 3vmax;
+}
+/* Pixel is static/independent unit, which doesn't depend on parent like Percentage(which is dependent unit).
+vh & vw are used for responsive behaviour and are Independent of parent. v-max & v-min works according to- the ratio of screen  */
+nav{
+    width: 100%;
+    /* height: 5vmax; */
+    height: 10vh;   /* Taking height of all i.e. nav,section 1 & 2 in vh */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid white;
+
+    /* padding:2vmax 3vmax; */
+    /* background-color: white; */
+}
+nav > h3{
+    font: 900 2.5vmax "blood Crow";
+    letter-spacing: 3px;
+}
+nav  ul{
+    display: flex;
+    list-style-type: none;
+    font: 200 1.2vmax "Gilroy";
+    /* font-weight: 200; */
+}
+nav > ul > li{
+    padding: 0 1vmax;
+    /* list-style-type: none; */
+    /* display: inline;  */
+    
+}
+nav li:hover{
+    color:chartreuse;
+    cursor: pointer;
+}
+nav > span{
+    font: 200 1.2vmax "Gilroy";
+    display: flex; 
+    align-items: center;
+    /* justify-content: center; */
+}
+nav > span > i{
+    font-size: 2vmax;
+}
+/* --------------------NAV ENDS--------------------------*/
+
+.section1{
+    width: 100%;
+    height: 70vh;
+    /* background-color: gray; */
+    margin-top: 5vmax;
+    display: flex;
+}
+.s1-left{
+    width: 50%;
+    height: 100%;
+    /* display: flex; */
+    padding-right: 3vmax;
+}
+.s1-left > h1{
+    color: white;
+    font: 600 6vmax 'montserrat';
+    line-height: 6vmax;
+    /* line-height is heiht b/w two lines */
+
+    margin-bottom: 3vmax;
+    /* hr-tag is used instead of (border-bottom: 1px solid #fff;) */
+}
+.s1-left img{
+    width: 4.5vmax;
+    height: 4.5vmax;
+
+    object-fit: cover;         /* new CONCEPT */
+    object-position: center;
+
+    border-radius: 50%;
+    border: 4px solid black;
+    /* display: flex; */
+}
+.s1-left img:nth-child(2){     /* new CONCEPT */
+    transform: translateX(-3vmax);
+}
+.s1-left img:nth-child(3){
+    transform: translateX(-6vmax);
+}
+.s1-left span{
+    /* .s1-left > span is not working here*/
+    display: inline-block; /* inline-block, since h1 is block tag */
+    transform: translate(-7vmax);
+}
+.s1-box{
+    font: 200 1.3vmax sans-serif;
+    color:rgba(255, 255, 255, 0.719);
+    margin-top: 1vmax;
+    display: flex;
+    justify-content: space-between;
+}
+
+.s1-right {
+    width: 50%;
+    height: 90%;
+    border-radius: 1vmax;
+    padding: 0 3vmax;
+    background-color: #b3a0cf;
+    /* margin-top: 1vmax; */
+    
+    clip-path: polygon(85% 0, 85% 11%, 100% 11%, 100% 100%, 0 100%, 0 0);
+    /* clip-path for designing box-size */
+
+    background-image: url(IMG_1118-removebg-preview.png);
+    /*avif-to-png convertor to convert unsplash images and move to bg-remover-webs to remove background */
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* position: relative; not working*/
+
+    display: flex;
+    /* this flex property is for s1-right 'p' & input */
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.circles{
+    /* width: 1vmax;
+    height: 1vmax; */
+    position: absolute;
+    right: 5%;
+    top: 25%;
+    /* z-index: 10000; */
+}
+.circles  span{
+    width: 1vmax;
+    height: 1vmax;
+    display: inline-block; /*without this part only 1 box is visible & Display should be Inline-block */
+    border: 1px solid white;
+    margin-right: 0.3vmax;
+    border-radius: 50%;
+    animation: loader 1s ease infinite alternate;
+}
+@keyframes loader{
+    from{
+        transform: translatey(-10px);
+    }
+    to{
+        transform: translatey(10px);
+    }
+}
+.circles span:first-child{
+    background-color: #fff;
+}
+.circles span:nth-child(2){
+    animation-delay: .2s;
+}
+
+.s1-right p{
+    width: 100%;
+    /* width 100% leni padi bc align-items center krne pr p-ka-content center mein ja rah tha*/
+    /* margin-top: 1.5vmax; */
+    padding: 2vmax 0vmax;
+    font: 600 1.3vmax Sans-serif;
+}
+.s1r-input{
+    width: 100%;
+    height: 10.1%;
+    margin-bottom: 4vmax;
+    border: 1px solid black ;
+    border-radius: 2vmax;
+    display: flex;
+   justify-content:flex-start;
+   align-items: center;
+   padding: 1vmax 1.5vmax;
+}
+.s1r-input p{
+    font: 600 1.6vmax Sans-serif;
+    color: #fff;
+}
+.s1r-input > i{
+    font-size: 3vmax;
+    animation: moving 3s linear 5 both;
+}
+@keyframes moving{
+    from{
+        transform: translateX(-500%);
+        color: white;
+    }
+    to{
+        transform: translateX(flex-end);
+    }
+}
+/* --------------------SECTION 1 ENDS--------------------------*/
+
+.section2{
+    width: 100%;
+    height: 40vh;
+    /* background-color: pink; */
+    /* margin-top: vmax; */
+    display: flex;
+}
+.s2-left{
+    width: 30%;
+    height: 100%;
+    /* background-color: greenyellow; un-commenting this removes ".s2l-title > i" OR just reload site once*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.s2l-title{
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.s2l-title > i{
+    font-size: 4vmax;
+    animation: play 5s ease  infinite both;
+}
+@keyframes play{
+    0%{
+        transform: rotate(0deg) scale(1) ;  
+    }
+    50%{
+        transform: rotate(360deg) scale(1.5) ;
+        color: #fd5e09;
+    }
+    100%{
+        transform: rotate(360deg) scale(1) ;
+    }
+}
+.s2l-title p{
+    font: 400 1.5vmax sans-serif;
+    padding-left: 1vmax;
+    color: rgba(255, 255, 255, 0.719);
+}
+
+.s2l-buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; 
+    
+}
+.s2l-buttons > button{
+    padding: .5vmax 1.2vmax;
+    margin-bottom: 1vmax;
+    border-radius: 2vmax;
+    border: 1px solid rgba(255, 255, 255, 0.719);
+    background-color: black;
+    color:rgba(255, 255, 255, 0.719);
+    font: 100 1.3vmax sans-serif;
+    animation: scale 5s linear 4 both;
+}
+@keyframes scale{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.5);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+/* ------------- */
+.s2-right{
+    width: 70%;
+    height: 100%;
+    /* background-color: purple; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center; 
+}
+.s2r-box{
+    width: 33%;
+    height: 100%;
+    border-radius: 1vmax;
+    margin-right: .4vmax;
+    clip-path: polygon(66% 6%, 73% 0, 100% 0, 100% 100%, 0 100%, 0 6%);
+    padding: 3vmax 2vmax 1vmax;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    animation: style 4s linear 5 both;
+}
+@keyframes style {
+    from{
+        transform: scale(0.8);
+    }
+    to{
+        transform: scale(1);
+    }
+    
+}
+.s2r-box1{
+    background-color: #fd5e09;
+    font:600 1.4vmax sans-serif;
+}
+.s2r-box1 i{
+    font: 500 6vmax sans-serif;
+    animation: rotate 4s ease  infinite both;
+    /* transform-origin: center; */
+}
+@keyframes rotate{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+.s2r-box2{
+    background-color: #e0e0e0;
+    font:700 2.4vmax sans-serif;
+    letter-spacing: -1px;
+}
+.s2r-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.s2r-box2  .circles{
+    position: initial;
+}
+.s2r-header .circles span{
+    width: 1vmax;
+    height: 1vmax;
+    border-color: black;
+}
+.s2r-header > .circles > span:first-child{
+    background-color: black;
+}
+.s2r-header i{
+    font-size: 3vmax;
+}
+.s2r-box3{
+    background-color: #fdc959;
+    font:600 1.4vmax sans-serif;
+}
+.s2r-box3 h1{
+    font: 500 6vmax sans-serif;
+    word-spacing: -2vmax;
+}
+/* --------------------------------------- */
+@media (max-width: 1084px) and (orientation:portrait){
+    /* 768 */
+    ul{
+        flex-direction: column;
+    }
+    .section1{
+        flex-direction: column;
+        /* justify-content: space-around; */
+    }
+    .s1-left,.s1-right{
+        width: 100%;
+    }
+    .s1c{
+        display: none;
+    }
+    .s1-left > h1{
+        /* display: flex; */
+        color: white;
+        /* font: 600 6vmax sans-serif; */
+        line-height: 6vmax;
+        margin-bottom: 3vmax;
+    }
+    .s1-left  span{
+        display: inline-block; /* inline-block, since h1 is block tag */
+        transform: translate(0vmax);
+    }
+    .s1-left img{
+        width: 6vmax;
+        height: 6vmax;
+    }
+    /* ------------- */
+    .section2{
+        width: 100%;
+        /* height: 40vh; */
+        /* background-color: pink; */
+        margin-top: 3vmax;
+        display: flex;
+        flex-direction: column;
+    }
+    .s2-left{
+        width: 100%;
+        height: 100%;
+        /* background-color: greenyellow; un-commenting this removes ".s2l-title > i" OR just reload site once*/
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+    .s2l-title p{
+        font-size: 1.8vmax;
+    }
+    .s2-right{
+        width: 100%;
+        /* height: 100%; */
+        /* background-color: purple; */
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center; 
+    }
+    .s2r-box3 h1{
+        font: 500 4.5vmax sans-serif;
+        word-spacing:-2vmax;
+    }
+}
+@media (max-width:389px) and (min-width:345px){
+    /*414  412  540   (564            412  393 375 */
+    .s1-left span{
+        /* .s1-left > span is not working here*/
+        display:inline-block; /* inline-block, since h1 is block tag */
+        transform: translate(-7vmax);
+    }
+}
